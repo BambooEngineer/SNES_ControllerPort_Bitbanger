@@ -143,7 +143,7 @@ void loop() {
       
       if(!(PIND &(0b01000000))){ // if Latch goes LOW
         bitbangData(); 
-        break; // break loop to wait for next latch when done parsing
+        break; // break loop to wait for next latch when done 
       }
     }
   }
