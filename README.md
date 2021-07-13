@@ -8,8 +8,10 @@ SNES Data ---> GPIO 8
 
 -------------------
 
+The shoulder buttons and select are currently not included. 
+
 BUG{ 
 
-The pulses on the data line for the controller port are lagging which causes ghosting for the buttons.
+DOWN is a bit static when held down but the rest of the buttons seem fine.
 
 }
