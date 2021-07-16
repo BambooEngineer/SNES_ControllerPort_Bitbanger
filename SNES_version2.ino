@@ -58,7 +58,7 @@ void bitbangData(){
     PORTB |= Buttons[inc];
     PORTB &= ~(!(Buttons[inc])); // Changes the pin value depending on the array variable value 
     _delay_us(9); // Timing seems alot better 
-    inc++; // DOWN is still static but the rest of the buttons seem fine 
+    inc++; 
     if(inc >= 16){  
        inc = 0; 
        break; 
@@ -135,7 +135,7 @@ void BData(){
         Buttons[1] = 0; // y 
        // Serial.println("y");
       }
-      if(!(PINC &(0b000001))){ // Analog pin A0, ( digital pin 13 caused ghosting )   
+      if(!(PINC &(0b000001))){ // Analog pin A0   
         Buttons[9] = 0; // x
         // Serial.println("x");
       }
