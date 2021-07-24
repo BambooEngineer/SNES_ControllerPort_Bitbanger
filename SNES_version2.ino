@@ -1,5 +1,5 @@
 #define Latch 6
-#define clk 7
+#define clk 2
 #define Data 8
 
 unsigned char b = 1; 
@@ -27,10 +27,10 @@ boolean push = true;
 
 void setup() {
   pinMode(Latch, INPUT); // latch 6
-  pinMode(clk, INPUT); // clock 7
+  pinMode(clk, INPUT); // clock 2
   pinMode(Data, OUTPUT); // data 8
   pinMode(10, INPUT_PULLUP);
-  pinMode(2, INPUT_PULLUP);
+  pinMode(A1, INPUT_PULLUP);
   pinMode(3, INPUT_PULLUP);
   pinMode(4, INPUT_PULLUP);
   pinMode(5, INPUT_PULLUP);
@@ -54,11 +54,14 @@ void bitbangData(){
     
     //!(PIND &(0b10000000))    clk LOW
     //PIND &(0b10000000)       clk HIGH
-    
+
+   // attachInterrupt(digitalPinToInterrupt(interruptPin), function, RISING or FALLING);
+    // sei (); //enable interrupts
+    // cli (); //disable interrupts
     PORTB |= Buttons[inc];
     PORTB &= ~(!(Buttons[inc])); // Changes the pin value depending on the array variable value 
     _delay_us(9); // Timing seems alot better 
-    inc++; 
+    inc++; // DOWN is still static but the rest of the buttons seem fine 
     if(inc >= 16){  
        inc = 0; 
        break; 
@@ -76,7 +79,6 @@ void bitbangData(){
     }*/
     
    /* if((PIND &(0b10000000)) && chigh){ // Data pulses seem to be lagging on the scope 
-
      
      inc++;
     
@@ -104,7 +106,7 @@ void BData(){
         Buttons[3] = 0; // start 
        // Serial.println("start");
       }
-      if(!(PIND &(0b00000100))){ // digital pin 2
+      if(!(PINC &(0b000010))){ // digital pin A1
         Buttons[6] = 0; // left
         //Serial.println("left");
       }
@@ -135,7 +137,7 @@ void BData(){
         Buttons[1] = 0; // y 
        // Serial.println("y");
       }
-      if(!(PINC &(0b000001))){ // Analog pin A0   
+      if(!(PINC &(0b000001))){ // Analog pin A0, ( digital pin 13 caused ghosting )   
         Buttons[9] = 0; // x
         // Serial.println("x");
       }
