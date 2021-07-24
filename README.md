@@ -23,11 +23,11 @@ START ---> DIGITAL PIN 10 |
 
 Games tested {
 
-Street fighter 2 turbo 
-Street fighter 2 championship edition
-Street fighter 2 World Warrior 
-Mortal Kombat 3  
-Super mario world  
+Street fighter 2 turbo , 
+Street fighter 2 championship edition , 
+Street fighter 2 World Warrior ,
+Mortal Kombat 3  ,
+Super mario world  ,
 Turtles in time 
 
 }
