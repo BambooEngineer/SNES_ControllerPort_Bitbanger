@@ -66,21 +66,21 @@ void setup() {
 void bitbangData(){ 
 
   // INT0 is digital pin 2 (rising edge) (clk)
-   
+  sei(); //enable interrupts
   while(true){ 
     
     //!(PIND &(0b10000000))    clk LOW
     //PIND &(0b10000000)       clk HIGH
 
-   // attachInterrupt(digitalPinToInterrupt(interruptPin), function, RISING or FALLING);
+   
     // sei (); //enable interrupts
     // cli (); //disable interrupts
    // _delay_us(9);
    
-    cli(); // disable interrupts
-    PORTB |= Buttons[inc];
-    PORTB &= ~(!(Buttons[inc])); 
-    sei(); //enable interrupts
+    
+    PORTB |= Buttons[inc-1];
+    PORTB &= ~(!(Buttons[inc-1])); 
+
     if(inc >= 16){  
         cli(); // disable interrupts
         inc = 0; 
