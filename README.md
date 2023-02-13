@@ -17,11 +17,6 @@
 | Y | DIGITAL PIN 12 |
 | START | DIGITAL PIN 10 |
 
-  | First Header  | Second Header |
-| ------------- | ------------- |
-| SNES Latch  | Content Cell  |
-| SNES CLK  | Content Cell  |
-
 Games tested with controller {
 
 Street fighter 2 turbo , 
