@@ -3,7 +3,7 @@
 
 These sketches can turn an arduino into an SNES controller.
 
-
+Footage : https://www.youtube.com/watch?v=Zfo8WwgHnzw
 
 <h1>WIRING<h1> 
 
