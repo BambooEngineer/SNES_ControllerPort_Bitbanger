@@ -1,5 +1,10 @@
 # SNES_ControllerPort_Bitbanger
 
+
+These sketches can turn an arduino into an SNES controller.
+
+
+
 <h1>WIRING<h1> 
 
 | SIGNAL  |  PIN |
